@@ -1,4 +1,4 @@
-package com.alexmumo.starwars
+package com.alexmumo.starwars.ui.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -18,8 +18,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             StarWarsTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background) {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
                     Greeting("Android")
                 }
             }
