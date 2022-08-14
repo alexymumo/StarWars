@@ -2,7 +2,7 @@ package com.alexmumo.starwars.models
 
 import com.google.gson.annotations.SerializedName
 
-data class Character(
+data class People(
     @SerializedName("birth_year")
     val birthYear: String?,
     @SerializedName("created")
