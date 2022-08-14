@@ -1,3 +1,6 @@
 package com.alexmumo.starwars.data.repository
 
-class MainRepository
+import com.alexmumo.starwars.data.network.api.StarWarsApi
+
+class MainRepository(private val starWarsApi: StarWarsApi) {
+}
