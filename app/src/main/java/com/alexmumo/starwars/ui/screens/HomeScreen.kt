@@ -5,13 +5,16 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.alexmumo.starwars.models.People
+import com.alexmumo.starwars.ui.composables.PeopleCard
 import com.alexmumo.starwars.ui.viewmodels.PeopleViewModel
 import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun HomeScreen(
+    navController: NavController,
     viewModel: PeopleViewModel = getViewModel()
 ) {
     val people = remember {
@@ -24,7 +27,8 @@ fun HomeScreen(
     ) {
         items(people.itemCount) { index ->
             people[index]?.let { people ->
-                TextItem(people = people)
+                PeopleCard(people = people)
+                // TextItem(people = people)
             }
         }
     }
