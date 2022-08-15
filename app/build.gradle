@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.alexmumo.starwars"
-        minSdk 21
-        targetSdk 32
+        minSdk 29
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -62,12 +62,17 @@ dependencies {
 
     // Paging
     implementation "androidx.paging:paging-runtime-ktx:3.1.1"
+    implementation "androidx.paging:paging-compose:1.0.0-alpha16"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-compose:$nav_version"
 
     // Timber
     implementation "com.jakewharton.timber:timber:$timber_version"
 
     // Koin
     implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-androidx-compose:$koin_version"
 
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
@@ -81,4 +86,8 @@ dependencies {
     // Okhttp
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha03"
 }
