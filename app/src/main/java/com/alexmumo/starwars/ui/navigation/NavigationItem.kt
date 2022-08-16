@@ -11,5 +11,5 @@ sealed class NavigationItem(
 ) {
     object Home : NavigationItem("home", R.drawable.ic_home, R.string.home)
     object Details : NavigationItem("detail{name}", R.drawable.ic_detail, R.string.detail)
-    object Settings : NavigationItem("setting", R.drawable.ic_home, R.string.detail)
+    object Settings : NavigationItem("setting", R.drawable.ic_setting, R.string.settings)
 }

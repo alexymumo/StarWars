@@ -5,13 +5,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
-import com.alexmumo.starwars.ui.viewmodels.PeopleViewModel
+import com.alexmumo.starwars.ui.viewmodels.CharacterViewModel
 import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun DetailScreen(
     navController: NavController,
-    viewModel: PeopleViewModel = getViewModel()
+    viewModel: CharacterViewModel = getViewModel()
 ) {
     Column(
         modifier = Modifier.fillMaxSize()

@@ -1,6 +1,6 @@
 package com.alexmumo.starwars.data.network.responses
 
-import com.alexmumo.starwars.models.People
+import com.alexmumo.starwars.models.Character
 import com.google.gson.annotations.SerializedName
 
 data class PeopleResponse(
@@ -11,5 +11,5 @@ data class PeopleResponse(
     @SerializedName("previous")
     val previous: String,
     @SerializedName("results")
-    val results: List<People>
+    val results: List<Character>
 )

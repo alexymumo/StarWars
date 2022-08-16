@@ -5,14 +5,14 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.alexmumo.starwars.data.repository.MainRepository
-import com.alexmumo.starwars.models.People
+import com.alexmumo.starwars.models.Character
 import kotlinx.coroutines.flow.Flow
 
-class PeopleViewModel constructor(private val mainRepository: MainRepository) : ViewModel() {
+class CharacterViewModel constructor(private val mainRepository: MainRepository) : ViewModel() {
 
-    val people: Flow<PagingData<People>> get() = fetchPeople()
+    val people: Flow<PagingData<Character>> get() = fetchPeople()
 
-    private fun fetchPeople(): Flow<PagingData<People>> {
+    private fun fetchPeople(): Flow<PagingData<Character>> {
         return mainRepository.fetchPeople().cachedIn(viewModelScope)
     }
 }

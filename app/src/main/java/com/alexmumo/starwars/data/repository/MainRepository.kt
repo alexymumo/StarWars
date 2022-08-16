@@ -5,11 +5,11 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.alexmumo.starwars.data.datasources.PeoplePagingSource
 import com.alexmumo.starwars.data.network.api.StarWarsApi
-import com.alexmumo.starwars.models.People
+import com.alexmumo.starwars.models.Character
 import kotlinx.coroutines.flow.Flow
 
 class MainRepository(private val starWarsApi: StarWarsApi) {
-    fun fetchPeople(): Flow<PagingData<People>> {
+    fun fetchPeople(): Flow<PagingData<Character>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 10,

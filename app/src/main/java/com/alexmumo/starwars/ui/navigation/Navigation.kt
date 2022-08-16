@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.alexmumo.starwars.ui.screens.DetailScreen
 import com.alexmumo.starwars.ui.screens.HomeScreen
+import com.alexmumo.starwars.ui.screens.SettingScreen
 
 @Composable
 fun Navigation(navController: NavHostController) {
@@ -17,7 +18,7 @@ fun Navigation(navController: NavHostController) {
             DetailScreen(navController = navController)
         }
         composable(route = NavigationItem.Settings.route) {
-
+            SettingScreen(navController = navController)
         }
     }
 }
