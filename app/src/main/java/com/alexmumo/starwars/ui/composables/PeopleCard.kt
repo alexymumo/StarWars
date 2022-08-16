@@ -1,7 +1,8 @@
 package com.alexmumo.starwars.ui.composables
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,7 +13,8 @@ import com.alexmumo.starwars.models.People
 @Composable
 fun PeopleCard(
     people: People,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    // onClickListener: (People) -> Unit
 ) {
     Card(
         elevation = 10.dp,
@@ -34,9 +36,20 @@ fun PeopleCard(
     }
 }
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun TextItem(people: People) {
-    Text(
-        text = people.name!!,
-    )
+fun DetailCard(
+    modifier: Modifier = Modifier,
+    people: People,
+    onItemClick: (People) -> Unit
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth().height(100.dp),
+        onClick = { onItemClick(people) }
+    ) {
+        Text(
+            text = people.name!!
+        )
+        Text(text = people.gender!!)
+    }
 }
