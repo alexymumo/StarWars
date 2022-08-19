@@ -3,16 +3,16 @@ package com.alexmumo.starwars.data.datasources
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.alexmumo.starwars.data.network.api.StarWarsApi
-import com.alexmumo.starwars.models.People
+import com.alexmumo.starwars.models.Character
 import retrofit2.HttpException
 import java.io.IOException
 
-class PeoplePagingSource(private val starWarsApi: StarWarsApi): PagingSource<Int, People>() {
-    override fun getRefreshKey(state: PagingState<Int, People>): Int? {
+class PeoplePagingSource(private val starWarsApi: StarWarsApi): PagingSource<Int, Character>() {
+    override fun getRefreshKey(state: PagingState<Int, Character>): Int? {
         return state.anchorPosition
     }
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, People> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {
         return try {
             val page = params.key ?: 1
             val people = starWarsApi.fetchPeople(page)
