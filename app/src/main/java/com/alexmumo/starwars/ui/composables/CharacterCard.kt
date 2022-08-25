@@ -58,11 +58,4 @@ fun CharacterCard(
         }
     }
 }
-/*Card(
-    elevation = 10.dp,
-    modifier = Modifier
-        .clickable {showDescription = showDescription.not() }
-        .fillMaxWidth()
-        .height(35.dp)
-        .padding(all = 5.dp)
-) {*/
+
