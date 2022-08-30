@@ -1,6 +1,7 @@
 package com.alexmumo.starwars.ui.screens
 
 import android.annotation.SuppressLint
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
@@ -14,8 +15,9 @@ fun MainScreen() {
     Scaffold(
         bottomBar = {
             BottomNav(navController = navController)
-        }
-    ) {
-        Navigation(navController = navController)
+        },
+        backgroundColor = MaterialTheme.colors.surface
+    ) { paddingValues ->
+        Navigation(navController = navController, paddingValues = paddingValues)
     }
 }
