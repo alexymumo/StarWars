@@ -39,6 +39,13 @@ fun HomeScreen(
                 )
             }
             Spacer(modifier = Modifier.height(5.dp))
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(4.dp)
+            ) {
+                // OutlinedTextField(value = "", onValueChange = {})
+            }
             LazyColumn(
                 state = listState
             ) {

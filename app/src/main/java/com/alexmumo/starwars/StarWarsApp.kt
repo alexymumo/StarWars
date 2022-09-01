@@ -1,6 +1,7 @@
 package com.alexmumo.starwars
 
 import android.app.Application
+import com.alexmumo.starwars.data.cache.di.cacheModule
 import com.alexmumo.starwars.data.network.di.networkModule
 import com.alexmumo.starwars.di.presentationModule
 import com.alexmumo.starwars.di.repositoryModule
@@ -27,7 +28,7 @@ class StarWarsApp : Application() {
         startKoin {
             androidLogger(level = Level.NONE)
             androidContext(this@StarWarsApp)
-            modules(repositoryModule, presentationModule, networkModule)
+            modules(repositoryModule, presentationModule, networkModule, cacheModule)
         }
     }
 }
